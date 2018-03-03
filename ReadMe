@@ -1,0 +1,46 @@
+Read Me!!
+
+Design:
+
+UI:
+1.From the UI the user input is taken number of seats and email. 
+
+Web services:(Not Implemented)
+Using the web services the number of seats and email will be sent to the server side.
+
+Server Side: (Spring Implementation)
+1. Controller would receive the data on the web service and based on the request URL the service will be called.(not implemented as web services is not implemented.)
+2. The Service SeatingReservation is implemented to perform all the required functions.
+3. Model is implemented which will act as a DAO layer and store the required data to the data base.
+
+Data Base:(Any Sql data base)
+1. Venue table with following rows:
+	-> rows
+	-> seatsPerRow
+	
+2. Reservation table with following rows:
+	->  Customer Email - primary Key (so same customer cannot book multiple time)
+	->  numOfSeats 
+	->  totalSeatsReserved
+	
+3. SeatHold table with following rows:
+	->  Customer Email - primary Key (so same customer cannot hold multiple time)
+	->  numOfSeats 
+	->  totalSeatsOnHold
+	
+Assumptions:
+1.Venue has 200 Seats.
+2.Reserved Seats are 20.
+3.Seats on hold are 33.
+
+To Run Application:
+1. Start.java is the main file from where execution starts.
+2. Click on run button to start execution.
+3. SeatingReservationTest is the file with junit tests.
+4. Click on run button to run the tests.
+
+
+
+
+
+
