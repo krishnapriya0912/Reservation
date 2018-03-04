@@ -56,7 +56,7 @@ public class Start {
 		sc.close();
 	}
 	else
-		System.out.println("Please enter valid input");
+		System.out.println("Please enter valid input.");
 
 	}
 }

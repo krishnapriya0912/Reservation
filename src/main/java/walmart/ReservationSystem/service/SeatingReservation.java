@@ -14,10 +14,14 @@ public class SeatingReservation implements TicketService {
 	Venue venue = new Venue();
 	int availableSeats = venue.getTotalAvailableSeats();
 	
+	public SeatingReservation() {
+		System.out.println("constructor");
+		availableSeats -= seat.getNumSeatsOnHold() + reservation.getTotalReservedSeats();
+	}
+	
 	// Returns the number of available seats 
 	public int numSeatsAvailable() {
 		if (reservation.getTotalReservedSeats() < 200) {
-		availableSeats -= seat.getNumSeatsOnHold() + reservation.getTotalReservedSeats();
 		return availableSeats;
 		}
 		else {
@@ -40,7 +44,7 @@ public class SeatingReservation implements TicketService {
 		if(seat.getSeatsHeld().get(customerEmail).equals(numSeats) ) {
 			// Removing the held seats from the SealHold list after making a reservation successfully.
 			seat.getSeatsHeld().remove(customerEmail);
-			System.out.println("Hold is release.");
+			System.out.println("Hold is released.");
 		}
 	}
 	
@@ -63,7 +67,7 @@ public class SeatingReservation implements TicketService {
 			}
 	}
 
-	//Methode to find the available seats and hold
+	//Method to find the available seats and hold
 	public SeatHold findAndHoldSeats(int numSeats, String customerEmail) {
 		if (numSeatsAvailable() > numSeats) {
 			HashMap<String, Integer> seatHold = new HashMap<String, Integer>();
