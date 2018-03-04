@@ -15,7 +15,6 @@ public class SeatingReservation implements TicketService {
 	int availableSeats = venue.getTotalAvailableSeats();
 	
 	public SeatingReservation() {
-		System.out.println("constructor");
 		availableSeats -= seat.getNumSeatsOnHold() + reservation.getTotalReservedSeats();
 	}
 	
